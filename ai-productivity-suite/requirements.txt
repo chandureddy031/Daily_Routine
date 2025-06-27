@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+imapclient
+caldav
+stripe
+appwrite
+qdrant-client
+langchain
+langchain-community
+autogen
+python-dotenv

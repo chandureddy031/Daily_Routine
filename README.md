@@ -31,3 +31,17 @@ touch scripts/{install_deps.sh,download_model.sh,run_scheduler.sh}
 
 touch .env .gitignore requirements.txt package.json README.md
 
+
+
+# to run
+
+docker-compose -f infrastructure/docker-compose.yml up -d
+
+bash scripts/download_model.sh
+
+bash scripts/install_deps.sh
+
+bash scripts/run_scheduler.sh
+
+cd frontend
+npm start

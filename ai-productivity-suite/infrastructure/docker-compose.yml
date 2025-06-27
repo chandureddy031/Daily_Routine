@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    restart: unless-stopped
+
+  appwrite:
+    image: appwrite/appwrite:1.5
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - appwrite_data:/storage
+    environment:
+      - _APP_ENV=production
+    restart: unless-stopped
+
+volumes:
+  qdrant_data:
+  appwrite_data:
